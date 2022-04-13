@@ -1,0 +1,33 @@
+{
+  "identifier" : "D07965F3",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "9D7D35EE",
+      "localizations" : [
+        {
+          "description" : "La necesitaras",
+          "displayName" : "Paciencia",
+          "locale" : "es_MX"
+        }
+      ],
+      "productID" : "com.sw30.patience",
+      "referenceName" : "patience",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

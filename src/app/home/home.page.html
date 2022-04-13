@@ -7,14 +7,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2 *ngIf="patience === 0">No tengo paciencia, Estoy Harto</h2>
+        <h2 *ngIf="patience === 1">Tengo 1 de paciencia. Estoy Parcialmente Harto</h2>
+        <h2 *ngIf="patience === 2">Tengo 2 de paciencia. Estoy ahi </h2>
+        <h2 *ngIf="patience > 2">Tengo {{patience}} de paciencia</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="buyPatience()">
+          <p style="margin-right: 1rem">
+            Dame Paciencia
+          </p>
+          <ion-icon name="card-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
