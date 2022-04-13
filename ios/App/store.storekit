@@ -15,7 +15,7 @@
           "locale" : "es_MX"
         }
       ],
-      "productID" : "com.sw30.patience",
+      "productID" : "com.iapdemo.patience",
       "referenceName" : "patience",
       "type" : "Consumable"
     }

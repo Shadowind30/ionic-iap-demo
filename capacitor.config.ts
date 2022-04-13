@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.sw30.patience',
-  appName: 'ionic-iap-demo',
+  appId: 'com.sw30.iapdemo',
+  appName: 'ionic IAP demo',
   webDir: 'www',
   bundledWebRuntime: false
 };

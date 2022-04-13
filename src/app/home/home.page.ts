@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { InAppPurchase2 } from '@awesome-cordova-plugins/in-app-purchase-2/ngx';
 import { AlertController, Platform } from '@ionic/angular';
 
@@ -9,9 +9,14 @@ import { AlertController, Platform } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
   public patience = 0;
-  private readonly PRODUCT_ID = 'com.sw30.patience';
+  private readonly PRODUCT_ID = 'com.iapdemo.patience';
 
-  constructor(public platform: Platform, private store: InAppPurchase2, private alertCtrl: AlertController) {}
+  constructor(
+    public platform: Platform,
+    private store: InAppPurchase2,
+    private alertCtrl: AlertController,
+    private ref: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.refreshStore();
@@ -24,13 +29,14 @@ export class HomePage implements OnInit {
       .approved(async (p) => {
         p.verify();
         console.log('approved');
+        this.patience += 1;
+        this.ref.detectChanges();
         const alert = await this.alertCtrl.create({
           header: 'Compra completada',
           message: 'Quieres comprar mas? Nunca se tiene suficiente.',
-          buttons: ['Listo']
+          buttons: ['Listo'],
         });
         await alert.present();
-        this.patience += 1;
       })
       .verified((p) => {
         p.finish();
