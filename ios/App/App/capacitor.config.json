@@ -1,6 +1,0 @@
-{
-	"appId": "com.sw30.iapdemo",
-	"appName": "ionic IAP demo",
-	"webDir": "www",
-	"bundledWebRuntime": false
-}
