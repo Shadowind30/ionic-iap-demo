@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
   public buyPatience() {
     this.store.order(this.PRODUCT_ID);
     this.store
-      .when(this.PRODUCT_ID)
+      .once(this.PRODUCT_ID)
       .approved(async (p) => {
         p.verify();
         console.log('approved');
@@ -41,6 +41,9 @@ export class HomePage implements OnInit {
       .verified((p) => {
         p.finish();
         console.log('purchase verified');
+      })
+      .finished(() => {
+        console.log('purchase finished');
       });
   }
 
